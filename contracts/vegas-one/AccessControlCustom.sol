@@ -11,7 +11,7 @@ contract AccessControlCustom is AccessControl {
     }
 
     function transferAdmin(address newAdmin)
-        public
+        external
         virtual
         onlyRole(DEFAULT_ADMIN_ROLE)
     {
@@ -24,7 +24,7 @@ contract AccessControlCustom is AccessControl {
     }
 
     function batchGrantRole(bytes32 role, address[] memory addresses)
-        public
+        external
         virtual
         onlyRole(getRoleAdmin(role))
     {
@@ -38,7 +38,7 @@ contract AccessControlCustom is AccessControl {
     }
 
     function batchRevokeRole(bytes32 role, address[] memory addresses)
-        public
+        external
         virtual
         onlyRole(getRoleAdmin(role))
     {
