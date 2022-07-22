@@ -8,7 +8,7 @@ import "erc-payable-token/contracts/token/ERC1363/ERC1363.sol";
 import "./AccessControlCustom.sol";
 import "./TokenRecover.sol";
 
-contract VFun is
+contract VegasONE is
     ERC1363,
     ERC20Burnable,
     ERC20Capped,
