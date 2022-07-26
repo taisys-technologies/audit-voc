@@ -20,7 +20,6 @@ contract VegasONE is
      */
 
     string public constant VERSION = "v1.0.0";
-    bytes32 public constant WORKER_ROLE = keccak256("WORKER_ROLE");
 
     /**
      * Errors
@@ -45,11 +44,8 @@ contract VegasONE is
     function mint(address to, uint256 amount) external {
         address sender = _msgSender();
 
-        // only admin, worker
-        if (
-            !hasRole(DEFAULT_ADMIN_ROLE, sender) &&
-            !hasRole(WORKER_ROLE, sender)
-        ) {
+        // only admin
+        if (!hasRole(DEFAULT_ADMIN_ROLE, sender)) {
             revert ErrForbidden();
         }
 
